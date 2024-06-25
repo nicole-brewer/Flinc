@@ -1,9 +1,20 @@
-# Prerequisites
+# Reproducible Notebook Containers using Application Virtualization
+
+## Prerequisites
+
 * Python 3.x with headers and compiler
 * pip >= 20.x
 * glibc>=2.17
 
-# Reproducible Notebook Containers using Application Virtualization
+### Using Ubuntu-based Docker Container
+
+To use Docker to satisfy the above requirments, follow the below steps. Note, that Docker will not work on MacBooks with an M1 chip. If you want to use another version of Ubuntu, change the first line in the Dockerfile. 
+
+1. [Install Docker](https://docs.docker.com/engine/install/)
+2. Build the docker container with `sudo docker build . -t flinc:ubuntu-22.04`
+3. Run the docker container interactively (launches into the command line) with `sudo docker sudo docker run -it flinc:ubuntu-22.04 /bin/bash`
+
+## Installing FLINC
 
 To install and use FLINC in your Jupyter environment, follow the steps 
 below.
@@ -44,3 +55,5 @@ should not be run again.
 3. After testing one notebook with the audit and repeat kernels successfully, 
    shut down the server and start it again before running another notebook with the audit kernel.
 4. If you run your code using the audit kernel on machine #1, you can repeat it using the repeat kernel on machine #2. To do this, first execute your code using audit kernel, and then run 'sciunit copy' to obtain a unique code. Take that code and run `sciunit open <code>`. This transfers the contents of the notebook container to machine #2 from machine #1.
+
+

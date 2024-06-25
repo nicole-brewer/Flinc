@@ -7,8 +7,9 @@ then
 fi
 
 # step 1: install sciunit from the given executable
-pip install cmake
-pip install sciunit2-0.4.post117.dev203853284.tar.gz
+# skipping the steps below, which occur in the docker image
+# pip install cmake
+# pip install sciunit2-0.4.post117.dev203853284.tar.gz
 sciunit create -f audit-kernel
 
 # step 2: copy kernel.json file of user kernel
