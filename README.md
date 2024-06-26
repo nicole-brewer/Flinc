@@ -1,9 +1,14 @@
-# Prerequisites
+# Reproducible Notebook Containers using Application Virtualization
+
+## Setting up Ubuntu 20.04 on Chameleon 
+Run `./startup.sh` on starting a new node to install the prerequisites and install flinc. Most specific instructions below.
+
+### Prerequisites
 * Python 3.x with headers and compiler
 * pip >= 20.x
 * glibc>=2.17
 
-# Reproducible Notebook Containers using Application Virtualization
+### Installing FLINC
 
 To install and use FLINC in your Jupyter environment, follow the steps 
 below.
