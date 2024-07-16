@@ -1,18 +1,15 @@
 #!/bin/bash
 
-if (( $# != 1 ))
-then
-  echo "Provide the user kernel path as an argument!"
-  exit 1
-fi
+# get the user kernel path
+output=$(jupyter kernelspec list)
+python3_path=$(echo "$output" | awk '/python3/ {print $2}')
+echo "$python3_path"
 
-# step 1: install sciunit from the given executable
-# pip install cmake
-pip3 install sciunit2-0.4.post117.dev203853284.tar.gz
 sciunit create -f audit-kernel
 
 # step 2: copy kernel.json file of user kernel
-kernelfilepath="$1/kernel.json"
+kernelfilepath="$python3_path/kernel.json"
+
 auditkerneldir="audit-kernel"
 mkdir -p ${auditkerneldir}
 cp ${kernelfilepath} ${auditkerneldir}
