@@ -1,5 +1,12 @@
 # Reproducible Notebook Containers using Application Virtualization
 
+## Installing the git repo
+```
+# we want to specifically clone the chameleon branch 
+git clone -b chameleon https://github.com/nicole-brewer/Flinc.git
+cd Flinc
+```
+
 ## Setting up Ubuntu 20.04 on Chameleon 
 Run `./startup.sh` on starting a new node to install the prerequisites and install flinc. Most specific instructions below.
 
