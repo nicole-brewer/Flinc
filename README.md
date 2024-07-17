@@ -1,49 +1,44 @@
 # Reproducible Notebook Containers using Application Virtualization
 
-## Installing the git repo
+## Installing Flinc
+### Clone the Chameleon branch of this repo
 ```
 # we want to specifically clone the chameleon branch 
 git clone -b chameleon https://github.com/nicole-brewer/Flinc.git
 cd Flinc
 ```
+### Install Flinc on Ubuntu 20.04
+Run `./startup.sh` on starting a new node to install the prerequisites (SciUnit) and install flinc. Most specific instructions below.
 
-## Setting up Ubuntu 20.04 on Chameleon 
-Run `./startup.sh` on starting a new node to install the prerequisites and install flinc. Most specific instructions below.
+### Setup Audit and Repeat Kernels
+Run `./install.sh' to start Flinc and make kernels available.
 
-### Prerequisites
-* Python 3.x with headers and compiler
-* pip >= 20.x
-* glibc>=2.17
+### Confirm setup
 
-### Installing FLINC
-
-To install and use FLINC in your Jupyter environment, follow the steps 
-below.
-
-1. After extracting the flinc directory, `cd` into it.
-2. Find the path of the kernel you wish to audit using this command:
-
-   `jupyter kernelspec list`
-   
-3. Execute install.sh from the command line:
-   
-   `./install.sh <user kernel path>`
-   
-   `<user kernel path>` is the path of the kernel that will execute your notebook code.
-
-4. The successful execution of the above script will result in the 
+The successful execution of the above script will result in the 
 installation of sciunit, audit kernel, and repeat kernel.
-   You may confirm the kernel installations by running:
+
+You may confirm the kernel installations by running:
    
    `jupyter kernelspec list`
 
-   
-6. Select the audit kernel from within the notebook and execute your notebook 
+### All Together
+```
+git clone -b chameleon https://github.com/nicole-brewer/Flinc.git
+cd Flinc
+./startup.sh
+./install.sh
+jupyter kernelspec list
+```
+
+## Using FLINC
+
+1. Select the audit kernel from within the notebook and execute your notebook 
 code. After execution completes, select 'No Kernel' from the list or shutdown the kernel and wait 30 seconds to 1 minute to complete the auditing.
-7. Repeat your notebook code on the same or different machine by selecting 
+2. Repeat your notebook code on the same or different machine by selecting 
 the repeat kernel.
-8. After using the repeat kernel, select No Kernel again to finish.
-9. Sciunit will store your notebook as an executable which you can 
+3. After using the repeat kernel, select No Kernel again to finish.
+4. Sciunit will store your notebook as an executable which you can 
 view using:
 
    `sciunit list`
