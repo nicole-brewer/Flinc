@@ -53,6 +53,6 @@ should not be run again.
 
 ## Uninstalling FLINC
 
-1. Uninstall sciunit with `pip3 uninstall sciunit`
+1. Uninstall sciunit with `pip3 uninstall sciunit2`
 2. Remove audit and repeat kernels with `jupyter kernelspec remove audit-kernel` and `jupyter kernelspec remove audit-kernel`
 3. Remove Flinc directory: `rm -rf Flinc`
